@@ -15,12 +15,10 @@ if [[ $(id -u) -ne 0 ]] ; then
     exit 1
 fi
 
-
-
 apt-get update
-apt-get install vim screen terminator 
+apt-get -y install vim screen terminator curl rake 
+
+curl -L https://bit.ly/janus-bootstrap | bash
 
 
 
-
-cp vim/vimrc /usr/share/vim/vimrc
