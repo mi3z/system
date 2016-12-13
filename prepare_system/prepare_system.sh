@@ -25,6 +25,7 @@ ls -d /home/*/* | grep -q "Desktop"
 if [ $? -ne 1 ]; then
   echo "replace german folders with english folders"
   LC_ALL=C xdg-user-dirs-update --force
+  gsettings set org.gnome.desktop.background show-desktop-icons true
 fi
 
 
