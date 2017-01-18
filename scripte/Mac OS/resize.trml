@@ -1,0 +1,53 @@
+#!/bin/bash
+
+## Made for Mac OS
+
+## This script resizes all images down to 50%.
+## Images have to be in the same folder as the scritp.
+## New resized images can be found in new subfolder
+
+## To run this script with double click:
+## right click on this script -> Information -> Open with: -> select Terminal.app and select execute every time.
+
+#ok variable
+ok=0
+
+
+# go to original path - in case script was started with double click
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+cd "${DIR}"
+
+# create new folder for images
+folder=$(date "+%Y_%m_%d_%H_%M_%S")
+mkdir $folder
+
+# resize images
+for f in * 
+do
+    file "$f" |grep -q -e image
+    if [ $? -ne "0" ]
+	then
+		continue
+	fi
+
+    H=$(sips -g pixelHeight "$f" | grep 'pixelHeight' | cut -d: -f2)
+    W=$(sips -g pixelWidth "$f" | grep 'pixelWidth' | cut -d: -f2)
+
+    H50=$(($H / 2))
+    W50=$(($W / 2))
+    sips --resampleHeight "$H50" "$f" --out $folder >/dev/null
+    #check if resize worked
+    if [ $? -ne "0" ]
+	then
+		ok=1
+	fi
+    echo $f
+done
+
+
+if [ $ok -eq "0" ]
+then
+	echo "*************************************************************"
+	echo "* OK * OK * OK * OK * OK * OK * OK * OK * OK * OK * OK * OK *  "
+	echo "*************************************************************"
+fi
