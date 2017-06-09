@@ -7,7 +7,8 @@
 ## New resized images can be found in new subfolder
 
 ## To run this script with double click:
-## right click on this script -> Information -> Open with: -> select Terminal.app and select execute every time.
+## 1. right click on this script -> Information -> Open with: -> select Terminal.app and select execute every time.
+## 2. open terminal and execute 'chmod +x resize.trml'
 
 #ok variable
 ok=0
