@@ -17,7 +17,8 @@ fi
 
 ## update and install packages
 apt-get update
-apt-get -y install vim screen terminator curl rake git open-vm-tools-desktop
+apt-get -y install vim screen terminator curl rake git
+apt-get -y install open-vm-tools-desktop
 
 
 ## replace german folders with english folders
