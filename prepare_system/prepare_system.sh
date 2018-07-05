@@ -17,7 +17,7 @@ fi
 
 ## update and install packages
 apt-get update
-apt-get -y install vim screen terminator curl rake git fail2ban 
+apt-get -y install vim screen terminator curl rake git fail2ban snap
 apt-get -y install open-vm-tools-desktop
 
 ## remove shopping lenses from ubuntu
@@ -30,6 +30,10 @@ if [ $? -ne 1 ]; then
   LC_ALL=C xdg-user-dirs-update --force
   gsettings set org.gnome.desktop.background show-desktop-icons true
 fi
+
+## install pycharm
+sudo snap install pycharm-community --classic
+
 
 
 cd /tmp
