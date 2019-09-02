@@ -21,7 +21,7 @@ apt-get -y install vim screen terminator curl rake git fail2ban snap
 apt-get -y install open-vm-tools-desktop
 
 ## remove shopping lenses from ubuntu
-sudo apt-get remove -y unity-webapps-common
+sudo apt-get remove -y unity-webapps-common unity-lens-shopping
 
 ## replace german folders with english folders
 ls -d /home/*/* | grep -q "Desktop"
