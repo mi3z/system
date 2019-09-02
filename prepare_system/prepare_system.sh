@@ -32,7 +32,8 @@ if [ $? -ne 1 ]; then
 fi
 
 ## install pycharm
-sudo snap install pycharm-community --classic
+## sudo snap install pycharm-community --classic
+sudo snap install pycharm-professional --classic
 
 
 
