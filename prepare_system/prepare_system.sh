@@ -17,7 +17,7 @@ fi
 
 ## update and install packages
 apt-get update
-apt-get -y install vim screen terminator curl rake git fail2ban snap
+apt-get -y install vim screen terminator curl rake git fail2ban snap docker docker-compose
 apt-get -y install open-vm-tools-desktop
 
 ## remove shopping lenses from ubuntu
