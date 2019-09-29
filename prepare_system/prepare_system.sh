@@ -34,7 +34,7 @@ fi
 ## install pycharm
 ## sudo snap install pycharm-community --classic
 sudo snap install pycharm-professional --classic
-
+sudo snap install webstorm --classic
 
 
 cd /tmp
